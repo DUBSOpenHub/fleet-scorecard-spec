@@ -1,5 +1,5 @@
 {
-  "schema_version": "fleet-scorecard-v0.1",
+  "schema_version": "fleet-scorecard-v0.1.0",
   "run_id": "run-20260505-170318",
   "mission": "Review the Agent Orchestra repo, test everything is working, and suggest improvements.",
   "generated_at": "2026-05-06T00:03:18Z",

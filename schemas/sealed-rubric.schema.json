@@ -16,7 +16,7 @@
   "properties": {
     "schema_version": {
       "type": "string",
-      "pattern": "^fleet-scorecard-v[0-9]+\\.[0-9]+$"
+      "pattern": "^fleet-scorecard-v[0-9]+\\.[0-9]+(\\.[0-9]+)?$"
     },
     "run_id": {
       "type": "string",

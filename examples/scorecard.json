@@ -1,5 +1,5 @@
 {
-  "schema_version": "fleet-scorecard-v0.1",
+  "schema_version": "fleet-scorecard-v0.1.0",
   "run_id": "run-20260505-170318",
   "status": "partial",
   "fleet_score": 78,
