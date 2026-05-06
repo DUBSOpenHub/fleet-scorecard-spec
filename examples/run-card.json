@@ -1,0 +1,14 @@
+{
+  "run_id": "run-20260505-170318",
+  "repo_path": "/Users/example/dev/agent-orchestra",
+  "source_run_path": "/Users/example/dev/agent-orchestra/.stampede/run-20260505-170318",
+  "backend": "Agent Conductor / Terminal Stampede",
+  "mission": "Review the Agent Orchestra repo, test everything is working, and suggest improvements.",
+  "created_at": "2026-05-06T00:03:18Z",
+  "questions": [
+    "What changed?",
+    "What won?",
+    "What failed?",
+    "Would I run it again?"
+  ]
+}

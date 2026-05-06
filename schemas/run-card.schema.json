@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/DUBSOpenHub/fleet-scorecard-spec/schemas/run-card.schema.json",
+  "title": "Fleet Scorecard Run Card",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "run_id",
+    "mission",
+    "backend",
+    "created_at",
+    "questions"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repo_path": {
+      "type": "string"
+    },
+    "source_run_path": {
+      "type": "string"
+    },
+    "backend": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mission": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "questions": {
+      "$ref": "#/$defs/questions"
+    }
+  },
+  "$defs": {
+    "questions": {
+      "type": "array",
+      "prefixItems": [
+        { "const": "What changed?" },
+        { "const": "What won?" },
+        { "const": "What failed?" },
+        { "const": "Would I run it again?" }
+      ],
+      "minItems": 4,
+      "maxItems": 4
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/DUBSOpenHub/fleet-scorecard-spec/schemas/scorecard.schema.json",
+  "title": "Fleet Scorecard",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "run_id",
+    "status",
+    "fleet_score",
+    "decision",
+    "backend",
+    "mission",
+    "questions",
+    "answers",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^fleet-scorecard-v[0-9]+\\.[0-9]+$"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "$ref": "#/$defs/status"
+    },
+    "fleet_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "decision": {
+      "$ref": "#/$defs/decision"
+    },
+    "backend": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repo": {
+      "type": "string"
+    },
+    "mission": {
+      "type": "string",
+      "minLength": 1
+    },
+    "questions": {
+      "$ref": "#/$defs/questions"
+    },
+    "answers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["what_changed", "what_won", "what_failed", "would_run_again"],
+      "properties": {
+        "what_changed": {
+          "type": "string",
+          "minLength": 1
+        },
+        "what_won": {
+          "type": "string",
+          "minLength": 1
+        },
+        "what_failed": {
+          "type": "string",
+          "minLength": 1
+        },
+        "would_run_again": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "seal": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "verified": {
+          "type": "boolean"
+        },
+        "criteria_hash": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "status": {
+      "type": "string",
+      "enum": ["success", "partial", "failed", "running"]
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["run again", "run again with changes", "wait for completion", "do not rerun"]
+    },
+    "questions": {
+      "type": "array",
+      "prefixItems": [
+        { "const": "What changed?" },
+        { "const": "What won?" },
+        { "const": "What failed?" },
+        { "const": "Would I run it again?" }
+      ],
+      "minItems": 4,
+      "maxItems": 4
+    }
+  }
+}

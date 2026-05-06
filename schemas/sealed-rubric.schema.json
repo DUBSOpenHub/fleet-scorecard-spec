@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/DUBSOpenHub/fleet-scorecard-spec/schemas/sealed-rubric.schema.json",
+  "title": "Fleet Scorecard Sealed Rubric",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "run_id",
+    "mission",
+    "generated_at",
+    "questions",
+    "dimensions",
+    "acceptance_checks"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^fleet-scorecard-v[0-9]+\\.[0-9]+$"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mission": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sealed_before_final_scorecard": {
+      "type": "boolean"
+    },
+    "questions": {
+      "$ref": "#/$defs/questions"
+    },
+    "dimensions": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["name", "points", "prompt"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "change_clarity",
+              "winner_confidence",
+              "failure_accounting",
+              "repeat_decision"
+            ]
+          },
+          "points": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 25
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "acceptance_checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "questions": {
+      "type": "array",
+      "prefixItems": [
+        { "const": "What changed?" },
+        { "const": "What won?" },
+        { "const": "What failed?" },
+        { "const": "Would I run it again?" }
+      ],
+      "minItems": 4,
+      "maxItems": 4
+    }
+  }
+}

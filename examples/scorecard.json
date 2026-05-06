@@ -1,0 +1,33 @@
+{
+  "schema_version": "fleet-scorecard-v0.1",
+  "run_id": "run-20260505-170318",
+  "status": "partial",
+  "fleet_score": 78,
+  "decision": "run again with changes",
+  "backend": "Agent Conductor / Terminal Stampede",
+  "repo": "/Users/example/dev/agent-orchestra",
+  "mission": "Review the Agent Orchestra repo, test everything is working, and suggest improvements.",
+  "questions": [
+    "What changed?",
+    "What won?",
+    "What failed?",
+    "Would I run it again?"
+  ],
+  "answers": {
+    "what_changed": "No working-tree changes were left. The run produced commander bundles, collaboration ledgers, Shadow Score results, and a hardening backlog.",
+    "what_won": "The runtime-hardening consensus won: cleanup traps, safer temp files, schema-driven validation, and clearer teardown state.",
+    "what_failed": "Two commanders were partial and terminal bundles were synthesized during teardown, so the run cannot be called success.",
+    "would_run_again": "Run again with changes: narrow the next mission and require all commanders to finish before teardown."
+  },
+  "seal": {
+    "verified": true,
+    "criteria_hash": "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+  },
+  "evidence": [
+    ".stampede/run-20260505-170318/results/commander-001.json",
+    ".stampede/run-20260505-170318/results/commander-003.json",
+    ".stampede/run-20260505-170318/results/commander-005.json",
+    ".stampede/run-20260505-170318/collab/consensus.jsonl",
+    ".stampede/run-20260505-170318/shadow-score/scorecard.json"
+  ]
+}

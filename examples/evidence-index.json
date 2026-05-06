@@ -1,0 +1,39 @@
+{
+  "run_id": "run-20260505-170318",
+  "backend": "Agent Conductor / Terminal Stampede",
+  "repo_path": "/Users/example/dev/agent-orchestra",
+  "source_run_path": "/Users/example/dev/agent-orchestra/.stampede/run-20260505-170318",
+  "status": "partial",
+  "fleet_score": 78,
+  "decision": "run again with changes",
+  "seal_verified": true,
+  "criteria_hash": "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  "scorecard_path": "/Users/example/dev/agent-orchestra/.fleet-scorecards/run-20260505-170318/scorecard.md",
+  "sources": [
+    {
+      "path": ".stampede/run-20260505-170318/state.json",
+      "kind": "run_state",
+      "summary": "Run state and Fleet Scorecard metadata"
+    },
+    {
+      "path": ".stampede/run-20260505-170318/results/commander-001.json",
+      "kind": "commander_bundle",
+      "summary": "Commander 001 result bundle"
+    },
+    {
+      "path": ".stampede/run-20260505-170318/collab/consensus.jsonl",
+      "kind": "collab_ledger",
+      "summary": "Consensus records"
+    },
+    {
+      "path": ".stampede/run-20260505-170318/shadow-score/scorecard.json",
+      "kind": "shadow_score",
+      "summary": "Shadow Score result used as evidence"
+    }
+  ],
+  "caveats": [
+    "commander-002 was partial.",
+    "commander-004 was partial."
+  ],
+  "generated_at": "2026-05-06T01:02:21Z"
+}

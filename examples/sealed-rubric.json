@@ -1,0 +1,42 @@
+{
+  "schema_version": "fleet-scorecard-v0.1",
+  "run_id": "run-20260505-170318",
+  "mission": "Review the Agent Orchestra repo, test everything is working, and suggest improvements.",
+  "generated_at": "2026-05-06T00:03:18Z",
+  "sealed_before_final_scorecard": true,
+  "questions": [
+    "What changed?",
+    "What won?",
+    "What failed?",
+    "Would I run it again?"
+  ],
+  "dimensions": [
+    {
+      "name": "change_clarity",
+      "points": 25,
+      "prompt": "The scorecard identifies concrete artifacts, code changes, decisions, or useful knowledge."
+    },
+    {
+      "name": "winner_confidence",
+      "points": 25,
+      "prompt": "The scorecard chooses a winning output, idea, commander, or recommendation with evidence."
+    },
+    {
+      "name": "failure_accounting",
+      "points": 25,
+      "prompt": "The scorecard honestly labels partials, failures, weak evidence, and missing outputs."
+    },
+    {
+      "name": "repeat_decision",
+      "points": 25,
+      "prompt": "The scorecard gives a clear rerun decision and the next run modification."
+    }
+  ],
+  "acceptance_checks": [
+    "Final scorecard answers all four required questions.",
+    "Partial runs are explicitly labeled partial.",
+    "Winner claims cite commander bundles, collaboration ledgers, git state, or Shadow Score.",
+    "Heartbeats and preflights are not treated as success evidence by themselves.",
+    "Cost accounting is not required for v0.1."
+  ]
+}
