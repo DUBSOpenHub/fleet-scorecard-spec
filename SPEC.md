@@ -35,7 +35,7 @@ repeated.
 
 ### What's Missing
 
-The industry lacks a standardized artifact for answering:
+A standardized artifact for answering:
 
 > Was this agent-fleet run useful, honest, and repeatable?
 
